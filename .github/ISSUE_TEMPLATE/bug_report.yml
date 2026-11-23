@@ -1,0 +1,39 @@
+name: Bug report
+description: Something in Devistic Text Compare is wrong or confusing.
+title: "[Bug] "
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What did you expect, and what happened instead? Use a short fake sample, not a private document.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Paste ...
+        2. Turn on ...
+        3. See ...
+    validations:
+      required: true
+  - type: dropdown
+    id: view
+    attributes:
+      label: View
+      options:
+        - Side by side
+        - Unified
+        - Both
+  - type: input
+    id: browser
+    attributes:
+      label: Browser
+      placeholder: Chrome 131, Firefox 133, Safari 18
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else
+      description: A screenshot is useful. Crop out anything private.
