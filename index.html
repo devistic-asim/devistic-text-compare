@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem('devistic-text-compare:theme') || 'system';
+          var dark =
+            theme === 'dark' ||
+            (theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          var root = document.documentElement;
+          root.setAttribute('data-theme', dark ? 'dark' : 'light');
+          root.style.colorScheme = dark ? 'dark' : 'light';
+        } catch (error) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
+    <style>
+      html { background: #f5f9fc; color: #1e293b; }
+      html[data-theme='dark'] { background: #0b1220; color: #f5f9fc; }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Devistic Text Compare is a free, private text diff that runs entirely in your browser. Compare line, word, and character changes. Nothing is uploaded."
+    />
+    <meta name="theme-color" content="#F5F9FC" />
+    <link rel="icon" href="%BASE_URL%favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="%BASE_URL%favicon-32.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="%BASE_URL%apple-touch-icon.png" />
+    <title>Devistic Text Compare</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
